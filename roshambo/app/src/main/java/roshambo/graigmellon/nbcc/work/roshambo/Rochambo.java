@@ -19,6 +19,9 @@ public class Rochambo {
     private Random rand;
 
 
+    /**
+     * Creates a new Rochambo to start the game
+     */
     public Rochambo() {
         rand = new Random();
         gameMove = rand.nextInt(2);
@@ -47,10 +50,18 @@ public class Rochambo {
         gameMove = rand.nextInt(3);
     }
 
+    /**
+     * Gets the game move based on the randomizer input
+     * @return ROCK, PAPER, or SCISSOR
+     */
     public int getGameMove() {
         return gameMove;
     }
 
+    /**
+     * Gets the player's move on the click of a button
+     * @return ROCK, PAPER, or SCISSOR
+     */
     public int getPlayerMove() {
         return playerMove;
     }

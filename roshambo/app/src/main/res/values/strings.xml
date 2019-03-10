@@ -5,5 +5,10 @@
     <string name="win">WINNER :)</string>
     <string name="lose">LOSER :(</string>
     <string name="draw">TIE</string>
-
+    <string name="rock_desc">Rock</string>
+    <string name="paper_desc">Paper</string>
+    <string name="scissors_desc">Scissors</string>
+    <string name="human_player_choice">Player Choice</string>
+    <string name="computer_player_choice">Computer Choice</string>
+    <string name="determine_result">WIN/LOSE/DRAW</string>
 </resources>
