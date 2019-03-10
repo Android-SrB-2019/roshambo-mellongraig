@@ -55,6 +55,13 @@ public class Rochambo {
         return playerMove;
     }
 
+    /**
+     * The winLoseOrDraw() method will determine the result based on the player
+     * selection and the computer player's selection and will return LOSE if the
+     * player loses, WIN if the player wins, or DRAW if both the human player
+     * and the computer player return the same result
+     * @return result based on the player and computer player's selections
+     */
     public int winLoseOrDraw() {
 
         if (playerMove == ROCK) {
