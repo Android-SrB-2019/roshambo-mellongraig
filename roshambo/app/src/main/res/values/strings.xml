@@ -1,0 +1,16 @@
+<resources>
+    <!-- Author: Graig Mellon
+         Date: 3/10/2019 -->
+    <string name="app_name">roshambo</string>
+    <string name="win">WINNER :)</string>
+    <string name="lose">LOSER :(</string>
+    <string name="draw">TIE</string>
+    <string name="rock_desc">Rock</string>
+    <string name="paper_desc">Paper</string>
+    <string name="scissors_desc">Scissors</string>
+    <string name="human_player_choice">Player Choice</string>
+    <string name="computer_player_choice">Computer Choice</string>
+    <string name="determine_result">WIN/LOSE/DRAW</string>
+    <string name="human_player_move">Your move</string>
+    <string name="computer_player_move">Computer player\'s move</string>
+</resources>
