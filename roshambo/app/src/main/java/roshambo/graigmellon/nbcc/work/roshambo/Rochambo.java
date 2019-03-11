@@ -25,7 +25,6 @@ public class Rochambo {
     private int playerMove;
     private Random rand;
 
-
     /**
      * Creates a new Rochambo to start the game
      */

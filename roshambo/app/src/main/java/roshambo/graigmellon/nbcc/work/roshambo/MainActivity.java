@@ -42,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * By a click of the button, the player's selection will be displayed
      * Computer player will also make the selection randomly
-     * Animation will also be called in another method
-     * Switch cases will be used to determine the moves
+     * Animation method will also be called
      * @param view Player selections
      */
     public void moveSelection(View view) {
@@ -66,19 +65,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        switch(startNewGame.getGameMove()){
-            case 0:
-                computerPlayerSelection.setImageResource(R.drawable.rock);
-                break;
-            case 1:
-                computerPlayerSelection.setImageResource(R.drawable.paper);
-                break;
-            case 2:
-                computerPlayerSelection.setImageResource(R.drawable.scissors);
-                break;
-            default:
-                //do nothing for computer player
-                break;
+        if(startNewGame.getGameMove() == 0){
+            computerPlayerSelection.setImageResource(R.drawable.rock);
+        } else if(startNewGame.getGameMove() == 1){
+            computerPlayerSelection.setImageResource(R.drawable.paper);
+        } else if(startNewGame.getGameMove() == 2){
+            computerPlayerSelection.setImageResource(R.drawable.scissors);
         }
         //determine the outcome selected
         Integer outcome = startNewGame.winLoseOrDraw();
