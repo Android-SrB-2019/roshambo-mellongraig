@@ -1,3 +1,8 @@
+/**
+ * Author: Graig Mellon
+ * Date: 3/10/2019
+ */
+
 package roshambo.graigmellon.nbcc.work.roshambo;
 
 import java.util.Random;

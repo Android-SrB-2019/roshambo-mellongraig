@@ -13,9 +13,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/rock_desc"
         app:layout_constraintEnd_toStartOf="@+id/paper_select"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:onClick="moveSelection"
         app:srcCompat="@drawable/rock_button" />
 
     <ImageView
@@ -25,9 +27,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintStart_toEndOf="@+id/rock_select"
+        android:contentDescription="@string/paper_desc"
         app:layout_constraintEnd_toStartOf="@+id/scissors_select"
+        app:layout_constraintStart_toEndOf="@+id/rock_select"
         app:layout_constraintTop_toTopOf="parent"
+        android:onClick="moveSelection"
         app:srcCompat="@drawable/paper_button" />
 
     <ImageView
@@ -37,9 +41,64 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="@string/scissors_desc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/paper_select"
         app:layout_constraintTop_toTopOf="parent"
+        android:onClick="moveSelection"
         app:srcCompat="@drawable/scissor_button" />
+
+    <ImageView
+        android:id="@+id/human_player_select"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/human_player_choice"
+        app:layout_constraintBottom_toTopOf="@+id/human_player_move"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/none" />
+
+    <ImageView
+        android:id="@+id/computer_player_select"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/computer_player_choice"
+        app:layout_constraintBottom_toTopOf="@+id/computer_player_move"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/none" />
+
+    <TextView
+        android:id="@+id/game_outcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:textSize="30sp"
+        android:text="@string/determine_result"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/human_player_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/human_player_move"
+        app:layout_constraintBottom_toTopOf="@+id/game_outcome"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/computer_player_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/computer_player_move"
+        app:layout_constraintBottom_toTopOf="@+id/game_outcome"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

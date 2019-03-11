@@ -11,4 +11,6 @@
     <string name="human_player_choice">Player Choice</string>
     <string name="computer_player_choice">Computer Choice</string>
     <string name="determine_result">WIN/LOSE/DRAW</string>
+    <string name="human_player_move">Your move</string>
+    <string name="computer_player_move">Computer player\'s move</string>
 </resources>
