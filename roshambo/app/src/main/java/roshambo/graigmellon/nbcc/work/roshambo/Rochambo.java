@@ -9,16 +9,18 @@ import java.util.Random;
 
 public class Rochambo {
 
+    //initialize the calls
     public static final int ROCK = 0;
     public static final int PAPER = 1;
     public static final int SCISSOR = 2;
     public static final int NONE = 3;
 
+    //initialize the results for the game outcome
     public static final int WIN = R.string.win;
     public static final int LOSE = R.string.lose;
     public static final int DRAW = R.string.draw;
 
-
+    //initialize the moves for human and computer players as well to randomize
     private int gameMove;
     private int playerMove;
     private Random rand;

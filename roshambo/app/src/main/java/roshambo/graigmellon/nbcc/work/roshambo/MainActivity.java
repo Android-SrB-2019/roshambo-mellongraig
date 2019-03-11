@@ -33,58 +33,62 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        determineResult = findViewById(R.id.game_outcome);
-        humanPlayerSelection = findViewById(R.id.human_player_select);
-        computerPlayerSelection = findViewById(R.id.computer_player_select);
+        //initialize all variables
+        determineResult = (TextView)findViewById(R.id.game_outcome);
+        humanPlayerSelection = (ImageView)findViewById(R.id.human_player_select);
+        computerPlayerSelection = (ImageView)findViewById(R.id.computer_player_select);
     }
 
     /**
      * By a click of the button, the player's selection will be displayed
-     * The game selection method will also be called
-     * Animation will also be called
-     * @param view Player's selection
+     * Computer player will also make the selection randomly
+     * Animation will also be called in another method
+     * Switch cases will be used to determine the moves
+     * @param view Player selections
      */
     public void moveSelection(View view) {
-        Integer playerSelect = (Integer) view.getTag();
-        Integer outcome = startNewGame.winLoseOrDraw();
-        determineResult.setText(outcome);
-        gameSelection();
-        animateSelection();
-        switch(playerSelect){
-            case Rochambo.ROCK:
-                startNewGame.playerMakesMove(0);
+
+        switch(view.getId()){
+            case R.id.rock_select:
+                startNewGame.playerMakesMove(Rochambo.ROCK);
                 humanPlayerSelection.setImageResource(R.drawable.rock);
                 break;
-            case Rochambo.PAPER:
-                startNewGame.playerMakesMove(1);
+            case R.id.paper_select:
+                startNewGame.playerMakesMove(Rochambo.PAPER);
                 humanPlayerSelection.setImageResource(R.drawable.paper);
                 break;
-            case Rochambo.SCISSOR:
-                startNewGame.playerMakesMove(2);
+            case R.id.scissors_select:
+                startNewGame.playerMakesMove(Rochambo.SCISSOR);
                 humanPlayerSelection.setImageResource(R.drawable.scissors);
                 break;
-            case Rochambo.NONE:
-                //do nothing here
+            default:
+                //do nothing for your selection here
                 break;
         }
-    }
 
-    /**
-     * The computer player will make a selection within the boundaries of the randomizer
-     * by choosing rock, paper, or scissors
-     */
-    public void gameSelection(){
-        if(startNewGame.getGameMove() == 0){
-            computerPlayerSelection.setImageResource(R.drawable.rock);
-        } else if (startNewGame.getGameMove() == 1){
-            computerPlayerSelection.setImageResource(R.drawable.paper);
-        } else if (startNewGame.getGameMove() == 2){
-            computerPlayerSelection.setImageResource(R.drawable.scissors);
+        switch(startNewGame.getGameMove()){
+            case 0:
+                computerPlayerSelection.setImageResource(R.drawable.rock);
+                break;
+            case 1:
+                computerPlayerSelection.setImageResource(R.drawable.paper);
+                break;
+            case 2:
+                computerPlayerSelection.setImageResource(R.drawable.scissors);
+                break;
+            default:
+                //do nothing for computer player
+                break;
         }
+        //determine the outcome selected
+        Integer outcome = startNewGame.winLoseOrDraw();
+        determineResult.setText(outcome);
+        animateSelection();
     }
 
     /**
-     * This will animate the player and computer player's images together
+     * This will animate the player and computer player's images together for half a second
+     * Rotation Y will go counter-clockwise
      */
     public void animateSelection(){
         ObjectAnimator animatorPlayer = ObjectAnimator.ofFloat(humanPlayerSelection,
